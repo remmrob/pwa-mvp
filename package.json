@@ -1,6 +1,6 @@
 {
   "name": "pwa-mvp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "build:prod": "ng build --configuration=production",
     "cy:open": "cypress open",
@@ -8,9 +8,10 @@
     "docker:run": "docker run --name pwa-mvp -d -p 8000:80 lhremmers/pwa-mvp:$npm_package_version",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start:cypress": "ng serve --port 4201 --configuration=development",
+    "start:docker":"yarn docker:build; yarn docker:run",
+    "test": "ng test",
+    "watch": "ng build --watch --configuration development"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,7 @@
     "@angular/cli": "~14.2.6",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
+    "cypress": "^11.1.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
