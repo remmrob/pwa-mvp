@@ -2,6 +2,10 @@
   "name": "pwa-mvp",
   "version": "0.0.0",
   "scripts": {
+    "build:prod": "ng build --configuration=production",
+    "cy:open": "cypress open",
+    "docker:build": "docker build --no-cache -t lhremmers/pwa-mvp:$npm_package_version .",
+    "docker:run": "docker run --name pwa-mvp -d -p 8000:80 lhremmers/pwa-mvp:$npm_package_version",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
