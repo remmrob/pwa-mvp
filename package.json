@@ -10,6 +10,7 @@
     "start": "ng serve",
     "start:cypress": "ng serve --port 4201 --configuration=development",
     "start:docker": "yarn docker:build; yarn docker:run",
+    "start:server":"yarn build:prod; cd ./dist/pwa-mvp; http-server -p 8002",
     "test": "ng test",
     "watch": "ng build --watch --configuration development"
   },

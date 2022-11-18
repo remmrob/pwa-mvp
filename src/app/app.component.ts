@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CheckForUpdateService } from './modules/core/services/check-for-update.service';
+import { HandleUnrecovableStateService } from './modules/core/services/handle-unrecovable-state.service';
+import { LogUpdateService } from './modules/core/services/log-update.service';
+import { PromptUpdateService } from './modules/core/services/prompt-update.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +12,12 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   public isOnline: boolean;
 
-  constructor() {
+  constructor(
+    private logUpdateService: LogUpdateService,
+    private checkForUpdateService: CheckForUpdateService,
+    private promptUpdateService: PromptUpdateService,
+    private handleUnrecovableService: HandleUnrecovableStateService
+  ) {
     this.isOnline = false;
   }
 
@@ -17,8 +26,6 @@ export class AppComponent implements OnInit {
 
     window.addEventListener('online', this.updateOnlineStatus.bind(this));
     window.addEventListener('offline', this.updateOnlineStatus.bind(this));
-
-
   }
 
   private updateOnlineStatus(): void {
