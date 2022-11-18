@@ -1,6 +1,6 @@
 {
   "name": "pwa-mvp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build:prod": "ng build --configuration=production",
     "cy:open": "cypress open",
@@ -9,7 +9,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:cypress": "ng serve --port 4201 --configuration=development",
-    "start:docker":"yarn docker:build; yarn docker:run",
+    "start:docker": "yarn docker:build; yarn docker:run",
     "test": "ng test",
     "watch": "ng build --watch --configuration development"
   },
@@ -25,6 +25,8 @@
     "@angular/pwa": "0.5.3",
     "@angular/router": "^14.2.0",
     "@angular/service-worker": "^14.2.0",
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.10.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
