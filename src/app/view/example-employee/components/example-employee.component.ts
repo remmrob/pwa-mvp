@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../../shared/models/employee.model';
-import { ExampleRequest } from '../../shared/models/example-request.models';
+import { Employee } from '../../../shared/models/employee.model';
+import { ExampleRequest } from '../../../shared/models/example-request.models';
 import { EmployeeService } from '../services/employee.service';
 
 @Component({
@@ -10,12 +10,19 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class ExampleEmployeeComponent implements OnInit {
   public apiData: Employee[] = [];
+  public selected!: Employee;
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(
+    private employeeService: EmployeeService,
+  ) {}
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe({
-      next: (result: ExampleRequest) => (this.apiData = result.data),
+      next: (result: ExampleRequest) => {
+        this.apiData = result.data;
+        this.selected = this.apiData[0];
+        
+      },
       error: (e) => console.error(e),
       complete: () => console.info('complete'),
     });

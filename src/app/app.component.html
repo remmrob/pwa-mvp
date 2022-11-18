@@ -1,13 +1,36 @@
-<div class="container-fluid py-3">
-  <h1>Angular Progressive Web Application (PWA)</h1>
+<mat-sidenav-container class="sidePanel-container">
+  <mat-sidenav #menuPanel fixedTopGap="56" class="menuPanel">
+    <button mat-icon-button (click)="toggleMenu('menuPanel')" class="menu-close-button">
+      <mat-icon>close</mat-icon>
+      <span class="button-text">Close menu</span>
+    </button>
 
-  <div class="row my-5">
-    <div class="col text-end">Status:</div>
-    <div class="col">
-      <span class="badge bg-success" *ngIf="isOnline">Online</span>
-      <span class="badge bg-danger" *ngIf="!isOnline">Offline</span>
+    <div class="mat-nav-list">
+      <mat-nav-list>
+        <a
+          mat-list-item
+          routerLink="/example-employee"
+          routerLinkActive="active"
+          class="mat-list-item-content"
+          (click)="toggleMenu('menuPanel')"
+        >
+          Example Employee
+        </a>
+        <a
+          mat-list-item
+          routerLink="/example-hardware"
+          routerLinkActive="active"
+          class="mat-list-item-content"
+          (click)="toggleMenu('menuPanel')"
+        >
+          Example Hardware
+        </a>
+      </mat-nav-list>
     </div>
-  </div>
-</div>
-
-<app-example-employee></app-example-employee>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

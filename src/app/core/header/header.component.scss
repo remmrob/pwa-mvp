@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.is-mobile .toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+  margin-top: 0px;
+}
+
+.toolbar {
+  margin-bottom: 28px;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mat-toolbar-single-row {
+  justify-content: space-between;
+}
