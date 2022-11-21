@@ -1,8 +1,7 @@
-<mat-sidenav-container class="sidePanel-container">
-  <mat-sidenav #menuPanel fixedTopGap="56" class="menuPanel">
-    <button mat-icon-button (click)="toggleMenu('menuPanel')" class="menu-close-button">
-      <mat-icon>close</mat-icon>
-      <span class="button-text">Close menu</span>
+<mat-sidenav-container class="sidePanel-container" [hasBackdrop]="false">
+  <mat-sidenav #menuPanel fixedTopGap="56" class="menuPanel" mode='push'>
+    <button mat-button (click)="toggleMenu('menuPanel')" class="icon-button">
+      <img class='icon' src="../assets/close.svg" />
     </button>
 
     <div class="mat-nav-list">

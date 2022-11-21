@@ -26,3 +26,18 @@ h1.app-name {
 .mat-toolbar-single-row {
   justify-content: space-between;
 }
+
+.icon-button{
+  display: flex;
+  align-items: center;
+  margin-left: 1.5%;
+  margin-top: 1%;
+  color: white;
+  .button-text {
+    margin-left: 10px;
+  }
+  .icon{
+    filter: invert(100%);
+  }
+}
+
