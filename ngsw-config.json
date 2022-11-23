@@ -12,6 +12,9 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://fonts.gstatic.com/s/roboto/*"
         ]
       }
     },
@@ -30,7 +33,9 @@
   "dataGroups": [
     {
       "name": "dummy-api-calls",
-      "urls": ["https://dummy.restapiexample.com/api/v1/*"],
+      "urls": [
+        "https://dummy.restapiexample.com/api/v1/*"
+      ],
       "cacheConfig": {
         "maxAge": "12h",
         "maxSize": 10,
